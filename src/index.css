@@ -1,0 +1,98 @@
+@import "tailwindcss";
+
+@font-face {
+  font-display: swap;
+  font-family: "Plus Jakarta Sans";
+  font-style: normal;
+  font-weight: 400;
+  src: url("./assets/fonts/plus-jakarta-sans-v11-latin-regular.woff2")
+    format("woff2");
+}
+@font-face {
+  font-display: swap;
+  font-family: "Plus Jakarta Sans";
+  font-style: normal;
+  font-weight: 600;
+  src: url("./assets/fonts/plus-jakarta-sans-v11-latin-600.woff2")
+    format("woff2");
+}
+@font-face {
+  font-display: swap;
+  font-family: "Plus Jakarta Sans";
+  font-style: normal;
+  font-weight: 700;
+  src: url("./assets/fonts/plus-jakarta-sans-v11-latin-700.woff2")
+    format("woff2");
+}
+
+body {
+  font-family: "Plus Jakarta Sans" sans-serif;
+}
+
+.login-bg {
+  background-image: url("./assets/images/bg-login.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.login-password {
+  background: linear-gradient(
+    159.02deg,
+    #0f123b 14.25%,
+    #090d2e 56.45%,
+    #020515 86.14%
+  );
+}
+
+.login-title {
+  background: linear-gradient(94.56deg, #ffffff 79.99%, #21242f 102.65%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.input-bg {
+  background: linear-gradient(
+    117.45deg,
+    rgba(255, 255, 255, 0) -3.91%,
+    rgba(255, 255, 255, 0.039) 75.27%
+  );
+  border: 2px solid transparent;
+  border-image-source: radial-gradient(
+      69.43% 69.43% at 50% 50%,
+      #ffffff 0%,
+      rgba(255, 255, 255, 0) 100%
+    ),
+    radial-gradient(
+      60% 51.57% at 50% 50%,
+      #582cff 0%,
+      rgba(88, 44, 255, 0) 100%
+    ),
+    radial-gradient(54.8% 53% at 50% 50%, #151515 0%, rgba(21, 21, 21, 0) 100%);
+  backdrop-filter: blur(42px);
+}
+
+.login-header {
+  background: linear-gradient(
+    123.64deg,
+    rgba(255, 255, 255, 0) -22.38%,
+    rgba(255, 255, 255, 0.039) 70.38%
+  );
+  background: blur(42px);
+  border-image-source: radial-gradient(
+    69.43% 69.43% at 50% 50%,
+    #ffffff 0%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  backdrop-filter: blur(10px);
+  border: 2px solid transparent;
+}
+
+.header-h2 {
+  background: linear-gradient(
+    97.89deg,
+    #ffffff 70.67%,
+    rgba(117, 122, 140, 0) 108.55%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
