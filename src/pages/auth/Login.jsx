@@ -13,7 +13,7 @@ const Login = () => {
         </h2>
       </div>
       <div className="login-password w-[50%] h-[100vh]">
-        <div className="w-[350px] ml-[103px] mt-[185px]">
+        <div className="w-[350px] ml-[103px] mt-[155px]">
           <div>
             <h2 className="font-bold text-[30px] text-white">
               Nice to see you!
@@ -49,7 +49,7 @@ const Login = () => {
             </a>
           </p>
         </div>
-        <div className="mt-[162px] ml-[61px]">
+        <div className="mt-[62px] ml-[61px]">
           <div>
             <p className="text-[#A0AEC0] text-[14px] lh-[150%]">
               @ 2021, Made with ❤️ by Simmmple & Creative Tim for a better web
