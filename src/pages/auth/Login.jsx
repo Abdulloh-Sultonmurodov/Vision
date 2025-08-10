@@ -1,6 +1,32 @@
+import { useNavigate } from "react-router-dom";
 import { Input, LoginHeader, Button, SwitchBtn } from "../../components";
+import { useContext } from "react";
+import { Context } from "../../Context/GlobalContext";
+import { useCookies } from "react-cookie";
 
 const Login = () => {
+  const navigate = useNavigate();
+  // const [_cookies, setCookies] = useCookies(["token"]);
+  // const { registerData } = useContext(Context);
+
+  function handleSubmit(e) {
+    e.preventDefault();
+    const data = {
+      email: e.target.email.value,
+      password: e.target.password.value,
+    };
+    if (!registerData) {
+      if (data.email == "abdulloh@gmail.com" && data.password == "123") {
+        setCookies("token", data);
+      }
+    } else {
+      if (
+        data.email == registerData.email &&
+        data.password == registerData.password
+      ) {
+      }
+    }
+  }
   return (
     <div className="flex relative">
       <div className="absolute flex justify-center top-[24px] right-[200px] left-[200px]">
@@ -23,16 +49,16 @@ const Login = () => {
             </p>
           </div>
           <div className="mt-[35px]">
-            <label className="text-white flex flex-col gap-[25px]">
-              <div>
+            <form onClick={handleSubmit} className="flex flex-col gap-[25px]">
+              <label className="text-white">
                 <p>Email</p>
-                <Input type="text" placeholder="Your email address" />
-              </div>
-              <div>
+                <Input type="email" placeholder="Your email address" />
+              </label>
+              <label className="text-white">
                 <p>Password</p>
                 <Input type="password" placeholder="Your password" />
-              </div>
-            </label>
+              </label>
+            </form>
           </div>
           <div className="mt-[24px] flex gap-[10px]">
             <SwitchBtn />
@@ -41,12 +67,12 @@ const Login = () => {
           <Button>SIGN IN</Button>
           <p className="mt-[23px] text-center text-[#A0AEC0]">
             Don't have an account?{" "}
-            <a
+            <span
+              onClick={() => navigate("/register")}
               className="text-white hover:text-[#0075FF] duration-300"
-              href="/"
             >
               Sign Up
-            </a>
+            </span>
           </p>
         </div>
         <div className="mt-[62px] ml-[61px]">
