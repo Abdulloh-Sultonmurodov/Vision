@@ -5,15 +5,17 @@ import { Context } from "../../Context/GlobalContext";
 
 const Register = () => {
   const navigate = useNavigate();
-  // const { RegisterDate, setRegisterDate } = useContext(Context);
-  function handleRegisterSubmit() {
+  const { setRegisterData } = useContext(Context);
+
+  function handleRegisterSubmit(e) {
     e.preventDefault();
     const data = {
       fullname: e.target.fullname.value,
       email: e.target.email.value,
       password: e.target.password.value,
     };
-    setRegisterDate(data);
+
+    setRegisterData(data);
     navigate("/login");
   }
 
@@ -42,7 +44,7 @@ const Register = () => {
               <label className="text-white">
                 <p>Name</p>
                 <Input
-                  type="username"
+                  type="text"
                   name={"fullname"}
                   placeholder="Your full name"
                 />
@@ -67,8 +69,8 @@ const Register = () => {
                 <SwitchBtn />
                 <p className="text-[12px] text-white">Remember me </p>
               </div>
+              <Button>SIGN IN</Button>
             </form>
-            <Button>SIGN IN</Button>
             <p className="mt-[13px] text-center text-[#A0AEC0]">
               Already have an account?
               <span

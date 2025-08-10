@@ -6,10 +6,10 @@ import { useCookies } from "react-cookie";
 
 const Login = () => {
   const navigate = useNavigate();
-  // const [_cookies, setCookies] = useCookies(["token"]);
-  // const { registerData } = useContext(Context);
+  const [_cookies, setCookie] = useCookies(["token"]);
+  const { registerData } = useContext(Context);
 
-  function handleSubmit(e) {
+  function handleSubmitLogin(e) {
     e.preventDefault();
     const data = {
       email: e.target.email.value,
@@ -17,13 +17,16 @@ const Login = () => {
     };
     if (!registerData) {
       if (data.email == "abdulloh@gmail.com" && data.password == "123") {
-        setCookies("token", data);
+        setCookie("token", data);
+        location.pathname = "/";
       }
     } else {
       if (
         data.email == registerData.email &&
         data.password == registerData.password
       ) {
+        setCookie("token", registerData);
+        location.pathname = "/";
       }
     }
   }
@@ -49,22 +52,33 @@ const Login = () => {
             </p>
           </div>
           <div className="mt-[35px]">
-            <form onClick={handleSubmit} className="flex flex-col gap-[25px]">
+            <form
+              onSubmit={handleSubmitLogin}
+              className="flex flex-col gap-[25px]"
+            >
               <label className="text-white">
                 <p>Email</p>
-                <Input type="email" placeholder="Your email address" />
+                <Input
+                  type="email"
+                  name="email"
+                  placeholder="Your email address"
+                />
               </label>
               <label className="text-white">
                 <p>Password</p>
-                <Input type="password" placeholder="Your password" />
+                <Input
+                  type="password"
+                  name="password"
+                  placeholder="Your password"
+                />
               </label>
+              <div className="flex gap-[10px]">
+                <SwitchBtn />
+                <p className="text-[12px] text-white">Remember me </p>
+              </div>
+              <Button>SIGN IN</Button>
             </form>
           </div>
-          <div className="mt-[24px] flex gap-[10px]">
-            <SwitchBtn />
-            <p className="text-[12px] text-white">Remember me </p>
-          </div>
-          <Button>SIGN IN</Button>
           <p className="mt-[23px] text-center text-[#A0AEC0]">
             Don't have an account?{" "}
             <span

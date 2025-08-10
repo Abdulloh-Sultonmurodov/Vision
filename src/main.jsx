@@ -3,11 +3,14 @@ import "./index.css";
 import App from "./App.jsx";
 import { BrowserRouter } from "react-router-dom";
 import { CookiesProvider } from "react-cookie";
+import { GlobalContext } from "./Context/GlobalContext.jsx";
 
 createRoot(document.getElementById("root")).render(
   <BrowserRouter>
     <CookiesProvider>
-      <App />
+      <GlobalContext>
+        <App />
+      </GlobalContext>
     </CookiesProvider>
   </BrowserRouter>
 );

@@ -26,7 +26,13 @@
 }
 
 body {
+  overflow: hidden;
   font-family: "Plus Jakarta Sans" sans-serif;
+}
+
+.active {
+  background-color: #1a1f37;
+  border-radius: 15px;
 }
 
 .login-bg {
@@ -87,7 +93,8 @@ body {
   border: 2px solid transparent;
 }
 
-.header-h2 {
+.header-h2,
+.navbar-h2-text {
   background: linear-gradient(
     97.89deg,
     #ffffff 70.67%,
@@ -95,4 +102,42 @@ body {
   );
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+}
+.navbar-bg {
+  background: linear-gradient(
+    111.84deg,
+    rgba(6, 11, 38, 0.94) 59.3%,
+    rgba(26, 31, 55, 0) 100%
+  );
+  backdrop-filter: blur(120px);
+}
+
+.bg-home {
+  background-image: url("./assets/images/bg-home.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.table-bg {
+  background: linear-gradient(
+    126.97deg,
+    rgba(6, 11, 40, 0.74) 28.26%,
+    rgba(10, 14, 35, 0.71) 91.2%
+  );
+}
+
+.nav-icon-bg {
+  background-color: #282c34;
+  color: #0075ff;
+  transition: background-color 0.2s, color 0.2s;
+}
+.nav-icon-bg.active {
+  background-color: #0075ff;
+  color: #fff;
+}
+.nav-icon-bg:focus,
+.nav-icon-bg:active {
+  background-color: #0075ff;
+  color: #fff;
+  outline: none;
 }
