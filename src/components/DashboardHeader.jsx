@@ -7,8 +7,16 @@ import {
 import { useCookies } from "react-cookie";
 
 const DashboardHeader = ({ item }) => {
-  const [cookies] = useCookies(["token"]);
+  const [cookies, setCookie, removeCookie] = useCookies(["token"]);
   const userData = cookies.token;
+
+  function handleLogOut() {
+    if (window.confirm("Are you sure to logout?")) {
+      removeCookie("token", { path: "/" });
+      window.location.reload();
+    }
+  }
+
   return (
     <div className="flex text-center justify-between items-center mt-[22px] ml-[41px] mr-[48px]">
       <div className="flex flex-col items-start gap-[6px]">
@@ -27,7 +35,7 @@ const DashboardHeader = ({ item }) => {
             placeholder="Type here..."
           />
         </form>
-        <div className="flex items-center gap-[5px]">
+        <div onClick={handleLogOut} className="flex items-center gap-[5px]">
           <AvatarIcon />
           <p className="text-[#718096] text-[12px]">{userData?.email}</p>
         </div>
