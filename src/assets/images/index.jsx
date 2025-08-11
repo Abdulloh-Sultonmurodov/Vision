@@ -12,6 +12,8 @@ import SecondCard from "./SecondCard.png";
 import FirstLastCard from "./FirstLastCard.png";
 import SecondLastCard from "./SecondLastCard.png";
 import User1 from "./User1.png";
+import User2 from "./User2.png";
+import User3 from "./User3.png";
 import Help from "./NeedHelp.png";
 
 export {
@@ -29,5 +31,7 @@ export {
   FirstLastCard,
   SecondLastCard,
   User1,
+  User2,
+  User3,
   Help,
 };
