@@ -1,4 +1,4 @@
-import { MoreIcon, TicIcon, XDIcon } from "../../assets/icons";
+import { AddIcon, MoreIcon, TicIcon, XDIcon } from "../../assets/icons";
 import { User1 } from "../../assets/images";
 import { DashboardFooter, DashboardHeader } from "../../components";
 
@@ -8,7 +8,12 @@ const Tables = () => {
       <DashboardHeader item={{ path: "Tables" }} />
       <div className="flex flex-col justify-center items-center gap-[24px] my-[28px] mx-[24px]">
         <div className="w-[1100px] h-[488px] rounded-[20px] table-bg py-[25px] px-[22px]">
-          <h2 className="text-white text-[18px]">Authors Table</h2>
+          <div className="flex justify-between">
+            <h2 className="text-white text-[18px]">Authors Table</h2>
+            <button className="text-white hover:text-[#0075FF] cursor-pointer">
+              <AddIcon />
+            </button>
+          </div>
           <div>
             <div className="flex mt-[23px] border-b-[1px] border-[#56577A] pb-[12px]">
               <p className="text-[#A0AEC0] text-[10px] mr-[450px]">AUTHOR</p>
@@ -43,7 +48,12 @@ const Tables = () => {
           </div>
         </div>
         <div className="w-[1100px] h-[453px] rounded-[20px] table-bg py-[25px] px-[22px]">
-          <h2 className="text-white text-[18px]">Projects</h2>
+          <div className="flex justify-between">
+            <h2 className="text-white text-[18px]">Projects</h2>
+            <button className="text-white hover:text-[#0075FF] cursor-pointer">
+              <AddIcon />
+            </button>
+          </div>
           <div className="flex items-center gap-[5px] mt-[6px] mb-[28px]">
             <TicIcon />
             <p className="text-[#A0AEC0] text-[14px]">30 done this month</p>

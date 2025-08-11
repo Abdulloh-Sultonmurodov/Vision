@@ -14,6 +14,7 @@ const DashboardHeader = ({ item }) => {
     if (window.confirm("Are you sure to logout?")) {
       removeCookie("token", { path: "/" });
       window.location.reload();
+      location("/login");
     }
   }
 
@@ -26,7 +27,10 @@ const DashboardHeader = ({ item }) => {
         <p className="text-white text-[14px]">{item.path}</p>
       </div>
       <div className="flex gap-[18px] items-center">
-        <form className=" border-[0.5px] rounded-[15px] border-[#E2E8F04D] text-white flex items-center gap-[10px] pl-[5px]">
+        <form
+          autoComplete="off"
+          className=" border-[0.5px] rounded-[15px] border-[#E2E8F04D] text-white flex items-center gap-[10px] pl-[5px]"
+        >
           <SearchIcon />
           <input
             className="w-[199px] h-[40px] outline-none"
