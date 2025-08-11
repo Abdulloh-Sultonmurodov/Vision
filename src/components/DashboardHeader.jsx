@@ -13,7 +13,6 @@ const DashboardHeader = ({ item }) => {
   function handleLogOut() {
     if (window.confirm("Are you sure to logout?")) {
       removeCookie("token", { path: "/" });
-      window.location.reload();
       location("/login");
     }
   }
